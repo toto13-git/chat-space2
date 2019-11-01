@@ -12,8 +12,8 @@
         margin-top: 35px;
       }
       &__members {
-        color: #999;
-        display: flex;
+        @include flexbox;
+        color: $light_gray;
         font-size: 12px;
         margin-top: 15px;
         .member {
@@ -30,24 +30,29 @@
       line-height: 40px;
       margin-top: 28px;
       padding: 0 20px;
+      &__button {
+        color: $light_blue;
+        text-decoration: none;
+      }
     }
   }
 
   .messages {
+    overflow: auto; 
     background-color: #FAFAFA;
     box-sizing: border-box;
     padding: 46px 40px 0;
-    height: calc(100% - 100px - 90px);
+    height: calc(100vh - 100px - 90px);
     .message {
       .upper-message {
         display: flex;
         &__user-name {
-          color: #434a54;
-          font-size: $side_header_font;
+          color: $black;
+          font-size: 16px;
           font-weight: bold;
         }
         &__date {
-          color: #999;
+          color: $light_gray;
           font-size: 12px;
           padding-left: 10px;
         }
@@ -55,7 +60,7 @@
       .lower-message {
         margin-top: 10px;
         &__content {
-          color: #434a54;
+          color: $black;
           font-size: 14px;
           margin-bottom: 40px;
         }
@@ -67,12 +72,11 @@
     background-color: #DDDDDD;
     box-sizing: border-box;
     height: 90px;
-    padding: 20px 40px;
+    padding: 20px 50px 20px 40px;
     &__message {
       border: none;
       float: left;
       height: 50px;
-      padding-left: 10px;
       width: calc(100% - 150px);
     }
     &__mask {
@@ -92,8 +96,8 @@
       background-color: $light_blue;
       border: none;
       color: $white;
-      position: fixed;
-      font-size: $side_header_font;
+      float: right;
+      font-size: 16px;
       height: 50px;
       margin-left: 15px;
       padding: 0 30px;
